@@ -1,12 +1,12 @@
 include baseline
 
 node default { 
+    
     include puppet
     include httpd
     include build
     include mysqld
     #include xdebug
-    include wrap
 
     file { '/var/www/html/index.html' :
         ensure => present,
@@ -22,7 +22,7 @@ node default {
 
     file { '/var/www/html/.htaccess' :
         ensure => present,
-        content => "AuthType WRAPOptional\nrequire nothing\n\nSetEnv APPLICATION_ENV \"development\"",
+        content => "SetEnv APPLICATION_ENV \"development\"",
         require => Package['httpd']
     }
 
