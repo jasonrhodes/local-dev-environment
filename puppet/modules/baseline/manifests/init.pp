@@ -1,24 +1,24 @@
 class baseline {  
     
-    Service {
-        hasstatus => true,
-        hasrestart => true
-    }
+    # Service {
+    #     hasstatus => true,
+    #     hasrestart => true
+    # }
 
-    include puppet
-    include monit
+    # include puppet
+    # include monit
 
-    package { [
-                "perl-Time-HiRes",
-                "tree",
-                "screen",
-                "git",
-              ]:
-        ensure => installed,
-    }
+    # package { [
+    #             "perl-Time-HiRes",
+    #             "tree",
+    #             "screen",
+    #             "git",
+    #           ]:
+    #     ensure => installed,
+    # }
 
-    service { "crond":
-        enable => true,
-        ensure => running,
-    }
+    # service { "crond":
+    #     enable => true,
+    #     ensure => running,
+    # }
 }
