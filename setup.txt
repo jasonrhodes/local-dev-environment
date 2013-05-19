@@ -1,0 +1,35 @@
+~/
+    vm/ 
+        .git
+        .vagrant
+        boxes/
+            centOS
+        puppet/
+            manifests/
+                default.pp -> use this unless you need a custom one
+            modules/
+                httpd/
+                apc/
+                etc...
+        Vagrantfile
+
+    vhosts/
+        project/
+            .git
+            .vagrant
+            Vagrantfile
+            manifests/
+                default.pp
+
+
+~/vm/Vagrantfile
+    - default file, uses all the default ~/vm manifests etc.
+    - links the shared folder to the vhosts main folder
+
+~/vhosts/project/Vagrantfile
+    - custom for the project, if needed
+    - should still point to the ~/vm/boxes/box
+    - should still point to the ~/vm/modules
+    - CAN still point to the default manifest, but why is it custom then?
+
+

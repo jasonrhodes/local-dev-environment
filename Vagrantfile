@@ -36,14 +36,14 @@ Vagrant::Config.run do |config|
 
   # Forward a port from the guest to the host, which allows for outside
   # computers to access the VM, whereas host only networking does not.
-  config.vm.forward_port 80, 8080
+  config.vm.forward_port 80, 9090
 
   # Share an additional folder to the guest VM. The first argument is
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
 
   # You can change the local path according to your own needs 
-  config.vm.share_folder "docroot", "/var/www/html/", "/usr/local/htdocs/"
+  config.vm.share_folder "docroot", "/var/www/html/", "~/vhosts/"
 
   config.vm.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/SHARE_NAME", "1"]
 
