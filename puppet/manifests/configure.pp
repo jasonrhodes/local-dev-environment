@@ -2,7 +2,6 @@ include baseline
 
 node default { 
     
-    include puppet
     include httpd
     include build
     include mysqld
