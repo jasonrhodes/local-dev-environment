@@ -1,7 +1,7 @@
 class httpd {
 
     package { ["httpd", "mod_ssl"]:
-        ensure => installed,
+        ensure => present,
     }
 
     service { "httpd":
@@ -62,10 +62,6 @@ class httpd {
         owner  => "root",
         group  => "root",
         mode   => 644,
-    }
-
-    file { "/etc/httpd/vhosts.d/00-default.conf":
-        ensure   => absent
     }
 
 }
