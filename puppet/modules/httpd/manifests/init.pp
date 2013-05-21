@@ -17,7 +17,7 @@ class httpd {
     }
 
     file { "/var/www/sites":
-        ensure => "directory",
+        ensure => directory,
     }
 
     file { ["/usr/local/apache", "/usr/local/apache/htdocs"]:
@@ -65,9 +65,7 @@ class httpd {
     }
 
     file { "/etc/httpd/vhosts.d/00-default.conf":
-        source => "puppet:///modules/httpd/etc/httpd/vhosts.d/00-default.conf",
-        owner  => "root",
-        group  => "root",
-        mode   => 644,
+        ensure   => absent
     }
+
 }

@@ -4,9 +4,9 @@ class mysqld {
                 "mysql",
                 "mysql-server",
                 "perl-DBD-MySQL",
-                "php-mysql",
               ]:
-        ensure => installed,
+        ensure  => installed,
+        require => Package['php54'],
     }
 
     service { "mysqld":
